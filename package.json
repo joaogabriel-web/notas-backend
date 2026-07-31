@@ -1,0 +1,24 @@
+{
+  "name": "notas-backend",
+  "version": "0.0.1",
+  "description": "aulas de backend e estudo",
+  "homepage": "https://github.com/joaogabriel-web/notas-backend#readme",
+  "bugs": {
+    "url": "https://github.com/joaogabriel-web/notas-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaogabriel-web/notas-backend.git"
+  },
+  "license": "ISC",
+  "author": "João Gabriel",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
