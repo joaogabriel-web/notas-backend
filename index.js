@@ -44,15 +44,15 @@ app.get("/api/pessoa/:peso1/:peso2/:peso3/:peso4/:peso5", (req, res) => {
 })
 
 // Exercicio 4
-app.get("/api/temperatura/:grau", (res, req) => {
-  const grauCelsius = Number(res.params.grau)
+app.get("/api/temperatura/:grau", (req, res) => {
+  const grauCelsius = Number(req.params.grau)
 
   const Fahrenheit = (9 * grauCelsius + 160) / 5
   res.send({ mesage: Fahrenheit })
 })
 
 // Exercicio 5
-app.get("/api/distancia/:milha", (res, req) => {
+app.get("/api/distancia/:milha", (req, res) => {
   const milhas = Number(req.params.milha)
 
   const km = milhas * 1.60934
@@ -60,10 +60,31 @@ app.get("/api/distancia/:milha", (res, req) => {
 })
 
 // Exercicio 6
-app.get("/api/tempo/:segundo", (res, req) => {
-  const segundos = Number(pes.params.segundos)
+app.get("/api/tempo/:segundos", (req, res) => {
+  const segundosTotais = Number(req.params.segundos)
+  const horas = Math.floor(segundosTotais / 3600)
+  const minutos = Math.floor((segundosTotais % 3600) / 60)
+  const segundos = segundosTotais % 60
 
-  const
+  res.send({ mesage: `${horas} horas, ${minutos} minutos, ${segundos} segundos` })
+})
+
+// Exercicio 7: Quilômetros -> metros e centímetros
+app.get('/api/medidas/:quilometro', (req, res) => {
+  const km = Number(req.params.quilometro)
+  const metros = km * 1000
+  const centimetros = metros * 100
+  res.send({ mesage: { quilometro: km, metros, centimetros } })
+})
+
+// Exercicio 8: Tabuada (0 até 10)
+app.get('/api/tabuada/:numero', (req, res) => {
+  const numero = Number(req.params.numero)
+  const tabela = []
+  for (let i = 0; i <= 10; i++) {
+    tabela.push(`${numero} x ${i} = ${numero * i}`)
+  }
+  res.send({ mesage: tabela })
 })
 
 app.listen(3000, () => {
