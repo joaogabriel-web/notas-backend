@@ -5,6 +5,7 @@ import express from 'express' // TYPE MODULE
 
 // inicializando o express - new
 const app = express()
+app.use(express.json())
     // var
     // const exemplo = "batata", exmplo = 0
     // let expmloAlterar = 0, exemploAlterar = "batata"
@@ -86,6 +87,35 @@ app.get('/api/tabuada/:numero', (req, res) => {
   }
   res.send({ mesage: tabela })
 })
+
+// POST e PULL
+
+// Exemplo Post
+app.post("/api/somar", (req, res) => {
+  const num1 = req.body.num1
+  const num2 = req.body.num2
+
+  res.send({ mesage: num1 + num2 })
+})
+
+// Exercicio 9: Post
+app.post("/api/medianotas", (req, res) => {
+  const n1 = req.body.n1
+  const n2 = req.body.n2
+  const n3 = req.body.n3
+
+  if (media >= 7) {
+    console.log("Aprovado")
+  } else {
+    console.log("Reprovado")
+  }
+
+  const resultado = n1 + n2 + n3
+  const media = resultado / 3
+
+  res.send({ message: media })
+})
+
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')
