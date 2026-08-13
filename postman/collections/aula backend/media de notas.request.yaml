@@ -1,16 +1,17 @@
 $kind: http-request
+name: media de notas
 description: ""
-url: localhost:3000/api/somar?batata=20
+url: localhost:3000/api/medianotas
 method: POST
-queryParams:
-  batata: "20"
 body:
   type: json
   content: "{\r
 
-    \    \"num1\": 30,\r
+    \    \"num1\": 4,\r
 
-    \    \"num2\": 20\r
+    \    \"num2\": 6,\r
+
+    \    \"num3\": 7\r
 
     }"
 order: 2000
