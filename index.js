@@ -110,6 +110,28 @@ app.post("/api/medianotas", (req, res) => {
   res.send({ message: media })
 })
 
+// Exercício 10: Post
+app.post("/api/pesoideal", (req, res) => {
+
+    const sexo = req.body.sexo
+    const altura = req.body.altura
+
+    let pesoIdeal
+
+    if (sexo == "H") {
+        pesoIdeal = (72.7 * altura) - 58
+    } else if (sexo == "M") {
+        pesoIdeal = (62.1 * altura) - 44.7
+    } else {
+        return res.send({ mensagem: "Sexo inválido" })
+    }
+
+    res.send({ mensagem: pesoIdeal })
+})
+
+// Execicio 11
+app.post("/api")
+
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')
