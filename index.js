@@ -104,12 +104,6 @@ app.post("/api/medianotas", (req, res) => {
   const n2 = req.body.n2
   const n3 = req.body.n3
 
-  if (media >= 7) {
-    console.log("Aprovado")
-  } else {
-    console.log("Reprovado")
-  }
-
   const resultado = n1 + n2 + n3
   const media = resultado / 3
 
