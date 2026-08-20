@@ -130,7 +130,21 @@ app.post("/api/pesoideal", (req, res) => {
 })
 
 // Execicio 11
-app.post("/api")
+app.post("/api/matematica", (req, res) => {
+  const n1 = req.body.n1
+  const n2 = req.body.n2
+  const op = req.body.op
+
+  let resultado
+
+  if (op == "+"){
+    resultado = n1 + n2
+  } else if (op == "-") {
+    resultado = n1 - n2
+  } else if (op == "/") {
+    resultado = n1 / n2
+  } else if ()
+})
 
 
 app.listen(3000, () => {
