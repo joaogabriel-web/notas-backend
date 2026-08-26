@@ -1,0 +1,16 @@
+$kind: http-request
+name: Operaçao matematica
+url: localhost:3000/api/matematica
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"n1\": 4,\r
+
+    \    \"n2\": 5,\r
+
+    \    \"op\": \"-\"\r
+
+    }"
+order: 1030006381741574

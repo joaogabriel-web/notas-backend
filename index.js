@@ -5,6 +5,8 @@ import express from 'express' // TYPE MODULE
 
 // inicializando o express - new
 const app = express()
+
+// para utilizar o POST tem que usar: app.use(express.json)
 app.use(express.json())
     // var
     // const exemplo = "batata", exmplo = 0
@@ -13,7 +15,7 @@ app.use(express.json())
  // Exercicio 1   
 app.get('/api/somar', (req, res) => {
 
-   
+   // com Query na URL tem que como a API e "?num1=10 &num2=30" No POSTMAN tambem tem que colocar e no Params
     // http://localhost:3000/api/somar?num1=20&num2=70
     const num1 = Number(req.query.num1)
     const num2 = Number(req.query.num2)
@@ -88,7 +90,8 @@ app.get('/api/tabuada/:numero', (req, res) => {
   res.send({ mesage: tabela })
 })
 
-// POST e PULL
+// POST
+// No POSTMAN na onde fica a URL que tem colocar URL Completo. Exemeplo: "localhost:3000/api/matematica"
 
 // Exemplo Post
 app.post("/api/somar", (req, res) => {
@@ -126,7 +129,7 @@ app.post("/api/pesoideal", (req, res) => {
         return res.send({ mensagem: "Sexo inválido" })
     }
 
-    res.send({ mensagem: pesoIdeal })
+    res.send({ message: pesoIdeal })
 })
 
 // Execicio 11
@@ -143,7 +146,11 @@ app.post("/api/matematica", (req, res) => {
     resultado = n1 - n2
   } else if (op == "/") {
     resultado = n1 / n2
-  } else if ()
+  } else if (op == "x") {
+    resultado = n1 * n2
+  }
+  
+  res.send({ message: resultado })
 })
 
 
