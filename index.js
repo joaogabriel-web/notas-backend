@@ -14,8 +14,8 @@ app.use(express.json())
 
  // Exercicio 1   
 app.get('/api/somar', (req, res) => {
-
-   // com Query na URL tem que como a API e "?num1=10 &num2=30" No POSTMAN tambem tem que colocar e no Params
+    // query usa ? na URL
+    // Query na URL tem que colocar a API e "?num1=10 &num2=30" No POSTMAN tambem tem que colocar e no Params
     // http://localhost:3000/api/somar?num1=20&num2=70
     const num1 = Number(req.query.num1)
     const num2 = Number(req.query.num2)
@@ -153,6 +153,31 @@ app.post("/api/matematica", (req, res) => {
   res.send({ message: resultado })
 })
 
+// Exercicio 12
+app.post("/api/numpositivo", (req, res) => {
+  const num1 = req.body.num1
+
+  if ( num1 > 0) {
+    console = "Positvo"
+  } else if (num1 < 0){
+    console = "Negativo"
+  }
+
+  res.send({ mensagem: console })
+})
+
+// Exercicio 13
+app.post("/api/definir", (req, res) => {
+  const numero = res.body.numero
+
+  if (numero % 2 == 0){
+    resultado = "Par"
+  } else {
+    resultado = "Impar"
+  }
+
+  res.send({ mensagem: resultado })
+})
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')

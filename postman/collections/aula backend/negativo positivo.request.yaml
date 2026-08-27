@@ -1,0 +1,8 @@
+$kind: http-request
+name: negativo positivo
+url: localhost:3000/api/numpositivo
+method: POST
+body:
+  type: json
+  content: "{\r\n    num1: 10\r\n}"
+order: 2838283634283393
