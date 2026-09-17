@@ -146,12 +146,25 @@ class ControllerExercicio {
     }
 
     Definir(req, res) {
-    const numero = res.body.numero
+    const numero = req.body.numero
 
     if (numero % 2 == 0){
         resultado = "Par"
     } else {
         resultado = "Impar"
+    }
+
+    res.send({ mensagem: resultado })
+    }
+
+    Maior(req, res) {
+    const num1 = req.body.num1  
+    const num2 = req.body.num2
+
+    if (num1 > num2) {
+        resultado = num1
+    } else if (num2 > num1) {
+        resultado = num2
     }
 
     res.send({ mensagem: resultado })

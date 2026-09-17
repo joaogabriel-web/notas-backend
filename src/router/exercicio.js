@@ -47,4 +47,7 @@ router.post("/api/numpositivo", ControllerExercicio.Numpositivo)
 // Exercicio 13
 router.post("/api/definir", ControllerExercicio.Definir)
 
+// Exercicio 15
+router.post("/api/maior", ControllerExercicio.Maior)
+
 export default router
