@@ -1,4 +1,4 @@
-const nomes = Array("Ana", "Batata", "João")
+const nomes =  new Array("Ana", "Batata", "João")
 
 class Pessoa {
     Buscar() {

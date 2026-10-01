@@ -1,5 +1,5 @@
 // console.log("HELLO WORLD");
-import router from './src/router/exercicio.js'
+import router from './src/router/pessoa.js'
 import express from 'express' // TYPE MODULE
 // const express = require("express") // Type common JS
 

@@ -40,4 +40,4 @@ class ServicePessoa {
    
 }
 
-export default new ServiceExercicio()
+export default new ServicePessoa()
